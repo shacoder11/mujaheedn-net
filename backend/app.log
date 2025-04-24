@@ -1,0 +1,29 @@
+2025-04-24 23:05:03,144 INFO: Server started on port 5000 [in C:\Users\SSD FC\Documents\New folder (93)\New folder (2)\mujaheedinet\backend\server.py:453]
+2025-04-24 23:05:21,231 ERROR: Exception on /api/web_scan [POST] [in C:\Python313\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\SSD FC\Documents\New folder (93)\New folder (2)\mujaheedinet\backend\server.py", line 111, in decorated
+    data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+           ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'decode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python313\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\SSD FC\Documents\New folder (93)\New folder (2)\mujaheedinet\backend\server.py", line 119, in decorated
+    except jwt.ExpiredSignatureError:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'ExpiredSignatureError'
+2025-04-24 23:05:21,236 ERROR: Server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in C:\Users\SSD FC\Documents\New folder (93)\New folder (2)\mujaheedinet\backend\server.py:432]
+2025-04-24 23:25:54,490 INFO: Server started on port 5000 [in C:\Users\SSD FC\Documents\New folder (93)\New folder (2)\mujaheedinet\backend\server.py:454]
